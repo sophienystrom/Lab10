@@ -7,9 +7,10 @@ private string FirstName;
 private string LastName;
 private int age;
 private int YearlySalary;
-private int SalaryPercent;
+private double SalaryPercent;
 private int id;
 private string EmploymentStatus;
+private double UpdatedSalary;
 
 public Employee()
 {
@@ -39,7 +40,7 @@ public void RemoveEmployee()
   {
     Console.WriteLine("Employee already inactive");
   }
-  else if (EmploymentStatus == "active")
+  else 
   {
     EmploymentStatus = "inactive";
     Console.WriteLine("Employee removed");
@@ -55,14 +56,14 @@ public void Intro()
   Console.WriteLine("Yearly Salary: " + YearlySalary);
 }
 
-public void IncreaseSalary(int salarypercent)
+public void IncreaseSalary(double sp)
 {
- SalaryPercent = salarypercent;
+ SalaryPercent = sp/100;
 
  if (SalaryPercent >= 0)
  {
- YearlySalary = ((YearlySalary * (SalaryPercent/100)) + YearlySalary);
- Console.WriteLine("Yearly Salary updated to " + YearlySalary);
+ UpdatedSalary = ((YearlySalary * SalaryPercent) + YearlySalary);
+ Console.WriteLine("Yearly Salary updated to " + UpdatedSalary);
  }
  else 
  {

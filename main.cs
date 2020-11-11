@@ -2,7 +2,9 @@ using System;
 
 class MainClass {
   public static void Main (string[] args) {
-    
+  
+  Console.WriteLine(" ");
+  
   Employee employee1 = new Employee();
   employee1.Intro();
 
