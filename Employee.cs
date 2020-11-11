@@ -19,7 +19,7 @@ public Employee()
   id = 0;
   age = 0;
   YearlySalary = 0;
-  EmploymentStatus = "not applicable";
+  EmploymentStatus = "active";
 }
 
 public Employee(string FS, string LS, int AGE, int ID, int yearlysalary)
@@ -29,22 +29,21 @@ public Employee(string FS, string LS, int AGE, int ID, int yearlysalary)
   age = AGE;
   id = ID;
   YearlySalary = yearlysalary;
+  EmploymentStatus = "active";
 }
 
 public void RemoveEmployee()
 {
-  EmploymentStatus = "inactive";
-  Console.WriteLine("Employee removed successfully");
+ if (EmploymentStatus == "active")
+ {
+   EmploymentStatus = "inactive";
+   Console.WriteLine("Employee removed");
+ }
+ else 
+ {
+   Console.WriteLine("Employee already removed");
+ }
 
-  if (EmploymentStatus == "inactive")
-  {
-    Console.WriteLine("Employee already inactive");
-  }
-  else 
-  {
-    EmploymentStatus = "inactive";
-    Console.WriteLine("Employee removed");
-  }
 }
 
 public void Intro()
